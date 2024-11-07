@@ -9,7 +9,7 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "tbl_vahicle")
+@Table(name = "tbl_vehicles")
 @Getter
 @Setter
 public class Vehicle {
@@ -22,7 +22,7 @@ public class Vehicle {
     @SequenceGenerator(
             name = "VEHICLES_SEQ",
             sequenceName = "VEHICLES_SEQ",
-            allocationSize = 50
+            allocationSize = 1
     )
     private Long id;
 
