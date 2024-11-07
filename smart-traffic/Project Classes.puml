@@ -1,0 +1,61 @@
+@startuml
+class Vehicle {
+  - Long id
+  - String licensePlate
+  - String type
+}
+
+class Sensor {
+  - Long id
+  - String location
+}
+
+class Reading {
+  - Long id
+  - Timestamp timestamp
+  - Vehicle vehicle
+  - Sensor sensor
+  - double speed
+}
+
+class TrafficLight {
+  - Long id
+  - String location
+  - String state
+  - int cycleTime
+}
+
+class Incident {
+  - Long id
+  - String description
+  - Timestamp startTime
+  - Timestamp endTime
+}
+
+class Route {
+  - Long id
+  - String origin
+  - String destination
+  - double estimatedTime
+}
+
+class User {
+  - Long id
+  - String username
+  - String email
+}
+
+class Notification {
+  - Long id
+  - String message
+  - User user
+}
+
+Vehicle "*" -- "1" Reading : has
+Sensor "*" -- "1" Reading : takes
+TrafficLight "*" -- "*" Reading : affects
+Incident "*" -- "1" Reading : causes
+Route "*" -- "*" Reading : includes
+User "*" -- "*" Notification : receives
+
+@enduml
