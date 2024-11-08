@@ -32,6 +32,8 @@ public class TrafficLight {
 
     private int cycleTime; // In seconds
 
+    private TrafficLightStatus status;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
