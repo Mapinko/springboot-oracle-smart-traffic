@@ -26,7 +26,7 @@ public class VehicleService {
 
 
     // FIND VEHICLE BY ID
-    public Vehicle findVehicleById(Long id) {
+    public Vehicle getVehicleById(Long id) {
         Optional<Vehicle> OptionaVehicle = vehicleRepository.findById(id);
 
         if (OptionaVehicle.isPresent()) {
@@ -75,6 +75,7 @@ public class VehicleService {
             throw new RuntimeException("Vehicle not found!");
         }
     }
+
 
 
 }

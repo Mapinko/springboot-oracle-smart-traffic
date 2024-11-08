@@ -23,10 +23,10 @@ public class VehicleController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdVehicle);
     }
 
-    // FIND VEHICLE BY ID
+    // GET VEHICLE BY ID
     @GetMapping("/vehicles/{id}")
-    public ResponseEntity<Vehicle> findVehicleById(@PathVariable Long id) {
-        Vehicle vehicle = service.findVehicleById(id);
+    public ResponseEntity<Vehicle> getVehicleById(@PathVariable Long id) {
+        Vehicle vehicle = service.getVehicleById(id);
         return ResponseEntity.ok(vehicle);
     }
 
