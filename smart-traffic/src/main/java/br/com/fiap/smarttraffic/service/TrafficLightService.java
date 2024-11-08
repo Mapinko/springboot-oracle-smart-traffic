@@ -26,12 +26,4 @@ public class TrafficLightService {
     public List<TrafficLight> getAllTrafficLights() {
         return trafficLightRepository.findAll();
     }
-
-    public List<TrafficLight> getTrafficLightsByLocation(String location) {
-        return trafficLightRepository.findByLocation(location);
-    }
-
-    public List<TrafficLight> getTrafficLightsByStatus(TrafficLightStatus status) {
-        return trafficLightRepository.findByStatus(status);
-    }
 }

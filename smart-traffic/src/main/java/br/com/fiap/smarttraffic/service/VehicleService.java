@@ -1,6 +1,7 @@
 package br.com.fiap.smarttraffic.service;
 
 
+import br.com.fiap.smarttraffic.dto.VehicleDTO;
 import br.com.fiap.smarttraffic.model.Vehicle;
 import br.com.fiap.smarttraffic.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +52,7 @@ public class VehicleService {
         return vehicleRepository.findAll();
     }
 
-    public Vehicle updateVehicle(Long id, Vehicle updatedVehicleData) {
+    public Vehicle updateVehicle(Long id, VehicleDTO updatedVehicleData) {
         Optional<Vehicle> existingVehicle = vehicleRepository.findById(id);
 
         if (existingVehicle.isPresent()) {
