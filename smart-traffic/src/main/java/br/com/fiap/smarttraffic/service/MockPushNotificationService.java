@@ -11,6 +11,5 @@ public class MockPushNotificationService implements PushNotificationService {
     public void sendPushNotification(String message, String deviceId) {
         System.out.println("Sending push notification to device ID: " + deviceId);
         System.out.println("Notification message: " + message);
-        // You can add more detailed logging or simulation logic here, such as logging to a file or database.
     }
 }

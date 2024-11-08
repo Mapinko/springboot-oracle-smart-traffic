@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -35,6 +36,9 @@ public class Incident {
     @Column(name = "end_time")
     private Timestamp endTime;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Vehicle involvedVehicle;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,4 +51,5 @@ public class Incident {
     public int hashCode() {
         return Objects.hash(id, description, startTime, endTime);
     }
+
 }
