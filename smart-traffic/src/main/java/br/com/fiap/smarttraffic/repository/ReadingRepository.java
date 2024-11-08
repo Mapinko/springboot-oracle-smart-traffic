@@ -6,9 +6,10 @@ import br.com.fiap.smarttraffic.model.Vehicle;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ReadingRepository extends JpaRepository<Reading, Long> {
     List<Reading> findByVehicle(Vehicle vehicle);
 
-    List<Reading> findBySensor(Sensor sensor);
+    List<Reading> findBySensor(Optional<Sensor> sensor);
 }
