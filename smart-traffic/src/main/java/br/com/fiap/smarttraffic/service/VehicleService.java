@@ -51,14 +51,17 @@ public class VehicleService {
         return vehicleRepository.findAll();
     }
 
-    //UPDATE VEHICLE
-    public Vehicle updateVehicle(Vehicle vehicle) {
-        Optional<Vehicle> vehicleOptional = vehicleRepository.findById(vehicle.getId());
+    public Vehicle updateVehicle(Long id, Vehicle updatedVehicleData) {
+        Optional<Vehicle> existingVehicle = vehicleRepository.findById(id);
 
-        if (vehicleOptional.isPresent()) {
-            return vehicleRepository.save(vehicle);
+        if (existingVehicle.isPresent()) {
+            Vehicle vehicleToUpdate = existingVehicle.get();
+            vehicleToUpdate.setLicensePlate(updatedVehicleData.getLicensePlate());  // Update license plate
+            vehicleToUpdate.setType(updatedVehicleData.getType());              // Update type
+
+            return vehicleRepository.save(vehicleToUpdate);
         } else {
-            throw new RuntimeException("Vehicle not found!");
+            throw new RuntimeException("Vehicle with id " + id + " not found");
         }
     }
 

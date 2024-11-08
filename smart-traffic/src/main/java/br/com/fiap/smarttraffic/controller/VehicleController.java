@@ -46,16 +46,16 @@ public class VehicleController {
     }
 
     //LIST ALL VEHICLES
-    @GetMapping("vehicles")
+    @GetMapping("/vehicles")
     public ResponseEntity<List<Vehicle>> findAllVehicles() {
         List<Vehicle> vehicles = service.findAllVehicles();
         return ResponseEntity.ok(vehicles);
     }
 
     // UPDATE VEHICLE BY ID
-    @PutMapping("/vehicles")
-    public ResponseEntity<Vehicle> updateVehicle(@RequestBody Vehicle vehicle) {
-        Vehicle updatedVehicle = service.updateVehicle(vehicle);
+    @PutMapping("/vehicles/{id}")
+    public ResponseEntity<Vehicle> updateVehicle(@PathVariable Long id, @RequestBody Vehicle updatedVehicleData) {
+        Vehicle updatedVehicle = service.updateVehicle(id, updatedVehicleData);
         return ResponseEntity.ok(updatedVehicle);
     }
 
