@@ -16,6 +16,7 @@ public class UserService {
 
     // CREATE USER
     public User createUser(User user) {
+        user.setPushNotificationEnabled(false);
         return userRepository.save(user);
     }
 
@@ -49,11 +50,11 @@ public class UserService {
         Optional<User> existingUser = userRepository.findById(id);
 
         if (existingUser.isPresent()) {
-            User
-            userToUpdate = existingUser.get();
-            // Update specific fields based on updatedUser object
-            userToUpdate.setUsername(updatedUser.getUsername()); // Update username
-            userToUpdate.setEmail(updatedUser.getEmail());   // Update email (or any other fields)
+            User userToUpdate = existingUser.get();
+            // Update specific fields
+            userToUpdate.setUsername(updatedUser.getUsername());
+            userToUpdate.setEmail(updatedUser.getEmail());
+            userToUpdate.setPushNotificationEnabled(updatedUser.isPushNotificationEnabled()); // Update push notification setting
             return userRepository.save(userToUpdate);
         } else {
             throw new RuntimeException("User not found");

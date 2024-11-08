@@ -31,6 +31,10 @@ public class User {
     @NotBlank
     private String email;
 
+    private String deviceId;
+
+    private boolean pushNotificationEnabled;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,4 +47,5 @@ public class User {
     public int hashCode() {
         return Objects.hash(id, username, email);
     }
+
 }
