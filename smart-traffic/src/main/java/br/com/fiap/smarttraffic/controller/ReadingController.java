@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/readings")
+@RequestMapping("api/readings")
 public class ReadingController {
 
     @Autowired

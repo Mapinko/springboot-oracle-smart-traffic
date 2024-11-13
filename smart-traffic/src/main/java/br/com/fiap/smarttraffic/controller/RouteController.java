@@ -20,7 +20,7 @@ public class RouteController {
     private RouteService routeService;
 
     // CREATE ROUTE
-    @PostMapping("/routes")
+    @PostMapping("api/routes")
     public ResponseEntity<RouteDTO> createRoute(@RequestBody RouteDTO routeDTO) {
         Route route = mapToRoute(routeDTO);
         Route createdRoute = routeService.createRoute(route);

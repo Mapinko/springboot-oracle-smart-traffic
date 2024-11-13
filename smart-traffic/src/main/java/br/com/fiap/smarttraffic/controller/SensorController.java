@@ -13,14 +13,14 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/sensors")
 public class SensorController {
 
     @Autowired
     private SensorService sensorService;
 
     // CREATE SENSOR
-    @PostMapping("/sensors")
+    @PostMapping()
     public ResponseEntity<SensorDTO> createSensor(@RequestBody SensorDTO sensorDTO) {
         Sensor sensor = mapToSensor(sensorDTO);
         Sensor createdSensor = sensorService.createSensor(sensor);
@@ -28,7 +28,7 @@ public class SensorController {
     }
 
     // GET SENSOR BY ID
-    @GetMapping("/sensors/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<SensorDTO> getSensorById(@PathVariable Long id) {
         Optional<Sensor> sensorOptional = sensorService.getSensorById(id);
         if (sensorOptional.isPresent()) {
@@ -39,7 +39,7 @@ public class SensorController {
     }
 
     // GET ALL SENSORS
-    @GetMapping("/sensors")
+    @GetMapping()
     public ResponseEntity<List<SensorDTO>> getAllSensors() {
         List<Sensor> sensors = sensorService.getAllSensors();
         return ResponseEntity.ok(sensors.stream().map(this::mapToSensorDTO).collect(Collectors.toList()));

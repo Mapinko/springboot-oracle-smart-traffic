@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/traffic-lights")
+@RequestMapping("/api/traffic-lights")
 public class TrafficLightController {
 
     @Autowired
@@ -46,6 +46,7 @@ public class TrafficLightController {
         return ResponseEntity.ok(trafficLightDTO);
     }
 
+    // GET ALL
     @GetMapping
     public ResponseEntity<List<TrafficLightDTO>> getAllTrafficLights() {
         List<TrafficLight> trafficLights = trafficLightService.getAllTrafficLights();

@@ -1,0 +1,672 @@
+{
+	"info": {
+		"_postman_id": "09b7187c-b23f-4997-81b9-14c3254927c7",
+		"name": "SmartTraffic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34177151"
+	},
+	"item": [
+		{
+			"name": "Incident",
+			"item": [
+				{
+					"name": "CREATE Incident",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"A traffic accident occurred.\",\n    \"occurrenceTime\": \"2023-11-12T12:34:56\",\n    \"vehicleLicensePlate\": \"ABC-1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{incidentUrl}}",
+							"host": [
+								"{{incidentUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Incident By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{incidentUrl}}/id",
+							"host": [
+								"{{incidentUrl}}"
+							],
+							"path": [
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all incidents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{incidentUrl}}",
+							"host": [
+								"{{incidentUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Incident",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{incidentUrl}}/id",
+							"host": [
+								"{{incidentUrl}}"
+							],
+							"path": [
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Incident",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{incidentUrl}}/id",
+							"host": [
+								"{{incidentUrl}}"
+							],
+							"path": [
+								"id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": []
+		},
+		{
+			"name": "Reading",
+			"item": []
+		},
+		{
+			"name": "Route",
+			"item": [
+				{
+					"name": "Create Route",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"origin\": \"New York\",\n    \"destination\": \"Los Angeles\",\n    \"estimatedTime\": 5.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{routesUrl}}",
+							"host": [
+								"{{routesUrl}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Route by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{routesUrl}}/1",
+							"host": [
+								"{{routesUrl}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Route",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{routesUrl}}",
+							"host": [
+								"{{routesUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Route by Origin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{routesUrl}}/origin/New York",
+							"host": [
+								"{{routesUrl}}"
+							],
+							"path": [
+								"origin",
+								"New York"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Route by Destination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{routesUrl}}/destination/Los Angeles",
+							"host": [
+								"{{routesUrl}}"
+							],
+							"path": [
+								"destination",
+								"Los Angeles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "All Routes Check"
+		},
+		{
+			"name": "Sensor",
+			"item": [
+				{
+					"name": "Create Sensor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"location\": \"Sensor Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{sensorUrl}}}",
+							"host": [
+								"{{sensorUrl}}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET sensor by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sensorUrl}}}/1",
+							"host": [
+								"{{sensorUrl}}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All sensors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{sensorUrl}}}",
+							"host": [
+								"{{sensorUrl}}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TrafficLight",
+			"item": [
+				{
+					"name": "Create Traffic Light",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"location\": \"Main Street\",\n    \"state\": \"red\",\n    \"cycleTime\": 60\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{trafficUrl}}",
+							"host": [
+								"{{trafficUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET traffic by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{trafficUrl}}/1",
+							"host": [
+								"{{trafficUrl}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all traffic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{trafficUrl}}",
+							"host": [
+								"{{trafficUrl}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"johndoe\",\n    \"email\": \"johndoe@example.com\",\n    \"deviceId\": \"device123\",\n    \"pushNotificationEnabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}",
+							"host": [
+								"{{userUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET user by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{userUrl}}/2",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET user by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{userUrl}}/email/johndoe@example.com",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"email",
+								"johndoe@example.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET user by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{userUrl}}/username/johndoe",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"username",
+								"johndoe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{userUrl}}",
+							"host": [
+								"{{userUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"newemail@example.com\",\n    \"pushNotificationEnabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/2",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"newemail@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/2",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "Create Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"licensePlate\": \"ABC-123\",\n    \"type\": \"Car\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{vehicleUrl}}",
+							"host": [
+								"{{vehicleUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET vehicle by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{vehicleUrl}}/1",
+							"host": [
+								"{{vehicleUrl}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET vehicle by type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{userUrl}}/type/car",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"type",
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET vehicle by license plate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{userUrl}}/licensePlate/ABC-123",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"licensePlate",
+								"ABC-123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vehicle By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"newemail@example.com\",\n    \"pushNotificationEnabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{vehicleUrl}}/1",
+							"host": [
+								"{{vehicleUrl}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Vehicle By Id Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"newemail@example.com\",\n    \"pushNotificationEnabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{vehicleUrl}}/1",
+							"host": [
+								"{{vehicleUrl}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
